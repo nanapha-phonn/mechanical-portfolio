@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Mechanical Systems Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #B8966A;
+    --gold-light: #D4B896;
+    --gold-pale: #F5EFE6;
+    --ink: #0F0F0D;
+    --ink-muted: #3A3830;
+    --ink-soft: #7A7568;
+    --cream: #FAFAF7;
+    --cream-dark: #F0EFE8;
+    --rule: rgba(184,150,106,0.25);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--serif);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 4rem;
+    background: rgba(250,250,247,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 1.05rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-line {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 42%;
+    background: var(--cream-dark);
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 1px;
+    background: var(--gold);
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+  }
+  h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    max-width: 440px;
+    line-height: 1.8;
+  }
+  .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.25s;
+  }
+  .btn-primary:hover { background: var(--gold); }
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  .stat-box {
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .stat-number span { color: var(--gold); font-size: 2rem; }
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  /* SECTION COMMON */
+  section { padding: 7rem 4rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  h2 em { font-style: italic; color: var(--gold); }
+
+  /* ABOUT */
+  #about { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--ink-muted);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+  .about-text p:first-child { font-size: 1.4rem; color: var(--ink); line-height: 1.7; }
+  .aside-block {
+    padding: 2rem;
+    border-left: 2px solid var(--gold);
+    margin-bottom: 2rem;
+    background: var(--cream-dark);
+  }
+  .aside-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .aside-block p {
+    font-size: 0.95rem;
+    color: var(--ink-muted);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  /* SKILLS */
+  #skills { background: var(--cream-dark); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .skill-card {
+    background: var(--cream);
+    padding: 2.5rem 2rem;
+    border: 1px solid var(--rule);
+    transition: border-color 0.25s;
+  }
+  .skill-card:hover { border-color: var(--gold-light); }
+  .skill-icon { font-size: 1.5rem; margin-bottom: 1rem; display: block; }
+  .skill-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+  }
+  .skill-desc {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.6;
+    font-family: var(--mono);
+  }
+  .skill-tags { margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .tag {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid var(--rule);
+    color: var(--ink-soft);
+  }
+
+  /* PROJECTS */
+  #projects { background: var(--cream); }
+  .projects-list { display: flex; flex-direction: column; gap: 2px; }
+  .project-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    align-items: center;
+    gap: 3rem;
+    padding: 2.5rem 2rem;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    text-decoration: none;
+    transition: border-color 0.25s, background 0.25s;
+    cursor: pointer;
+  }
+  .project-card:hover { border-color: var(--gold-light); background: var(--gold-pale); }
+  .project-num {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+  }
+  .project-title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .project-meta {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .project-desc {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .project-arrow {
+    font-size: 1.2rem;
+    color: var(--gold);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all 0.25s;
+  }
+  .project-card:hover .project-arrow { opacity: 1; transform: translateX(0); }
+
+  /* BLOG */
+  #blog { background: var(--ink); }
+  #blog h2 { color: var(--cream); }
+  #blog h2 em { color: var(--gold); }
+  .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .blog-card {
+    padding: 2.5rem 2rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: background 0.25s;
+    cursor: pointer;
+  }
+  .blog-card:hover { background: rgba(255,255,255,0.07); }
+  .blog-date {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  .blog-title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: var(--cream);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  .blog-excerpt {
+    font-size: 0.88rem;
+    color: rgba(250,250,247,0.5);
+    font-weight: 300;
+    line-height: 1.7;
+    font-family: var(--mono);
+  }
+  .blog-read {
+    margin-top: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* CONTACT */
+  #contact { background: var(--cream-dark); }
+  .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; }
+  .contact-intro {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--ink);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .contact-intro em { font-style: italic; color: var(--gold); }
+  .contact-sub {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    font-family: var(--mono);
+    line-height: 1.8;
+  }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--rule);
+    background: var(--cream);
+    transition: border-color 0.25s, background 0.25s;
+  }
+  .contact-link:hover { border-color: var(--gold); background: var(--gold-pale); }
+  .contact-link-icon { font-size: 1rem; width: 1.5rem; text-align: center; }
+  .contact-link-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    display: block;
+  }
+  .contact-link-val { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
+  .contact-form { display: flex; flex-direction: column; gap: 0; }
+  .form-field { position: relative; margin-bottom: 2px; }
+  .form-field label {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    padding: 1rem 1.2rem 0.3rem;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-bottom: none;
+  }
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-top: none;
+    padding: 0.5rem 1.2rem 1rem;
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--ink);
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+  .form-field input:focus,
+  .form-field textarea:focus { border-color: var(--gold-light); }
+  .form-submit {
+    margin-top: 2px;
+    padding: 1.1rem;
+    background: var(--ink);
+    color: var(--cream);
+    border: none;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s;
+  }
+  .form-submit:hover { background: var(--gold); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    padding: 2.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(250,250,247,0.5);
+  }
+  .footer-copy {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: rgba(250,250,247,0.3);
+  }
+
+  /* SCROLL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    section { padding: 5rem 2rem; }
+    #hero { padding: 7rem 2rem 4rem; }
+    .hero-content, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-bg-line { display: none; }
+    .skills-grid, .blog-grid { grid-template-columns: 1fr; }
+    .project-card { grid-template-columns: auto 1fr; }
+    .project-desc { display: none; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Mechanical <span>Engineer</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">Background</a></li>
+    <li><a href="#skills">Specialization</a></li>
+    <li><a href="#projects">Work</a></li>
+    <li><a href="#blog">Insights</a></li>
+    <li><a href="#contact">Collaborate</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-line"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow"> Mechanics & Robotics</div>
+      <h1>Mechanical<br>engineering <em>analytical</em><br>modeling</h1>
+      <p class="hero-sub">Specializing in robotic end-effector design. I am a curiosity with robotics and control mechanical systems.</p>
+      <div class="btn-group">
+        <a href="#projects" class="btn-primary">Portfolio Archive ↓</a>
+        <a href="#contact" class="btn-outline">Start Discussion</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <span class="stat-number">1<span>+</span></span>
+        <span class="stat-label">Project Activities</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">3<span>+</span></span>
+        <span class="stat-label">Software Toolkits</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">7<span>-DOF</span></span>
+        <span class="stat-label">Kinematic Focus</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">MPC</span>
+        <span class="stat-label">Analytical Methods</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2>Academic <em>Foundation</em></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I am a researcher and engineer focused on the intersection of mechanical design and thermal management systems.</p>
+        <p>My work involves the rigorous analysis of turbomachinery components—specifically fans, pumps, and blowers—using fundamental fluid dynamics and thermodynamic cycles. I am particularly interested in the optimization of Diesel cycles and the efficiency of Air Handling Units (AHU) through LMTD and NTU methodologies.</p>
+        <p>Beyond thermal systems, I explore robotic precision, developing inverse kinematic models for 7-DOF arms and designing versatile end-effectors for multi-functional applications such as harvesting and precision pickup.</p>
+        <div class="btn-group" style="margin-top: 2rem;">
+          <a href="#" class="btn-outline">Download Proposal Structure</a>
+        </div>
+      </div>
+      <div class="about-aside reveal">
+        <div class="aside-block">
+          <div class="aside-label">Engineering Focus</div>
+          <p>Mechanical & Thermal Systems<br>Turbomachinery Analysis<br><em style="color: var(--gold); font-style: italic;">Thesis-Driven Research</em></p>
+        </div>
+        <div class="aside-block">
+          <div class="aside-label">Project Planning</div>
+          <p>Utilizing PERT/CPM for timeline management<br>Project Cycle: Feb–June 2025<br>20+ Integrated Milestones</p>
+        </div>
+        <div class="aside-block">
+          <div class="aside-label">Core Interests</div>
+          <p>Internal combustion engines, inverse kinematics, finite element analysis, and automated climate control systems.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2>Technical <em>Stack</em></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <span class="skill-icon">⚙</span>
+        <div class="skill-name">Simulation & FEA</div>
+        <p class="skill-desc">Validating structural integrity and fluid behavior through industry-standard simulation environments.</p>
+        <div class="skill-tags">
+          <span class="tag">Abaqus</span><span class="tag">MATLAB</span>
+          <span class="tag">Kinematics</span><span class="tag">Dynamics</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">◈</span>
+        <div class="skill-name">Thermal Engineering</div>
+        <p class="skill-desc">Analysis of heat exchangers and cooling batteries using LMTD and NTU methods for AHU optimization.</p>
+        <div class="skill-tags">
+          <span class="tag">LMTD</span><span class="tag">NTU</span>
+          <span class="tag">Diesel Cycle</span><span class="tag">HVAC</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">◉</span>
+        <div class="skill-name">Turbomachinery</div>
+        <p class="skill-desc">Performance calculation for axial fans, hydraulic pumps, and blowers using complex fluid formulas.</p>
+        <div class="skill-tags">
+          <span class="tag">Axial Fans</span><span class="tag">Pumps</span><span class="tag">Bore/Stroke</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">⬡</span>
+        <div class="skill-name">Robotics Design</div>
+        <p class="skill-desc">Designing end-effectors and calculating joint angles for 3-DOF robotic arms using inverse kinematics.</p>
+        <div class="skill-tags">
+          <span class="tag">3-DOF</span><span class="tag">End-Effectors</span>
+          <span class="tag">Kinematics</span><span class="tag">Grippers</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">▣</span>
+        <div class="skill-name">Project Management</div>
+        <p class="skill-desc">Strict adherence to project timelines through PERT and CPM calculation for complex engineering tasks.</p>
+        <div class="skill-tags">
+          <span class="tag">PERT</span><span class="tag">CPM</span>
+          <span class="tag">Task Variance</span><span class="tag">Planning</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <span class="skill-icon">◌</span>
+        <div class="skill-name">Numerical Computing</div>
+        <p class="skill-desc">Writing custom MATLAB scripts for data reduction, simulation control, and robotic path planning.</p>
+        <div class="skill-tags">
+          <span class="tag">Scripting</span><span class="tag">Debugging</span>
+          <span class="tag">Numerical Analysis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2>Active <em>Investigations</em></h2>
+    </div>
+    <div class="projects-list">
+      <div class="project-card reveal">
+        <div>
+          <div class="project-num">P.01 / 2026</div>
+          <div class="project-title">3-DOF Arm Inverse Kinematics</div>
+          <div class="project-meta">Robotics · MATLAB · Kinematics</div>
+        </div>
+        <div class="project-desc">Defined segment lengths (l1, l2, l3) and joint angles to optimize precision for a robotic arm designed for writing and drawing tasks.</div>
+        <div class="project-arrow">→</div>
+      </div>
+      <div class="project-card reveal">
+        <div>
+          <div class="project-num">P.02 / 2026</div>
+          <div class="project-title">AHU Heat Exchanger Analysis</div>
+          <div class="project-meta">Thermal · HVAC · NTU Method</div>
+        </div>
+        <div class="project-desc">Determined gas-side surface area requirements for air handling units using LMTD and NTU methods to improve cooling and dehumidification efficiency.</div>
+        <div class="project-arrow">→</div>
+      </div>
+      <div class="project-card reveal">
+        <div>
+          <div class="project-num">P.03 / 2026</div>
+          <div class="project-title">Diesel Cycle Engine Optimization</div>
+          <div class="project-meta">Combustion · Thermodynamics · Bore/Stroke</div>
+        </div>
+        <div class="project-desc">Detailed analysis of a four-cylinder Diesel engine, calculating thermodynamic parameters based on specific bore (82.1mm) and stroke (90.41mm) dimensions.</div>
+        <div class="project-arrow">→</div>
+      </div>
+      <div class="project-card reveal">
+        <div>
+          <div class="project-num">P.04 / 2025</div>
+          <div class="project-title">Multi-functional End Effector</div>
+          <div class="project-meta">Mechanical Design · Harvesting · Spraying</div>
+        </div>
+        <div class="project-desc">Designed a versatile gripper capable of executing diverse tasks including agricultural harvesting, industrial spraying, and item pickup.</div>
+        <div class="project-arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="section-inner">
+    <div class="section-header reveal" style="border-bottom-color: rgba(255,255,255,0.1);">
+      <span class="section-num" style="color: var(--gold);">04</span>
+      <h2>Engineering <em>Methodology</em></h2>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card reveal">
+        <div class="blog-date">March 2026</div>
+        <div class="blog-title">The Structural Difference: Thesis vs. Proposal</div>
+        <p class="blog-excerpt">Exploring why the bridge from a project proposal to a final thesis requires a fundamental shift in scope and analytical depth.</p>
+        <div class="blog-read">Read article →</div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="blog-date">February 2026</div>
+        <div class="blog-title">Applying PERT to Mechanical Design Timelines</div>
+        <p class="blog-excerpt">Calculating expected time (te) and variance to manage the uncertainty of prototyping and simulation errors in complex assemblies.</p>
+        <div class="blog-read">Read article →</div>
+      </div>
+      <div class="blog-card reveal">
+        <div class="blog-date">January 2026</div>
+        <div class="blog-title">Troubleshooting Finite Element Errors</div>
+        <p class="blog-excerpt">Analyzing common causes for "Job Aborted" errors in Abaqus/Standard and strategies for mesh refinement and convergence.</p>
+        <div class="blog-read">Read article →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">05</span>
+      <h2>Collaborative <em>Inquiry</em></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="contact-intro">Let's solve a <em>complex</em> system problem together.</p>
+        <p class="contact-sub">Currently open to research collaborations, internship inquiries, and technical discussions regarding mechanical and thermal system design.</p>
+        <div class="contact-links">
+          <a href="mailto:engineer@example.com" class="contact-link">
+            <span class="contact-link-icon">✉</span>
+            <div class="contact-link-text">
+              <span class="contact-link-label">Academic Email</span>
+              <span class="contact-link-val">engineering.researcher@univ.edu</span>
+            </div>
+            <span style="color: var(--gold-light);">→</span>
+          </a>
+          <a href="#" class="contact-link">
+            <span class="contact-link-icon">in</span>
+            <div class="contact-link-text">
+              <span class="contact-link-label">Professional Network</span>
+              <span class="contact-link-val">linkedin.com/in/mechanical-specialist</span>
+            </div>
+            <span style="color: var(--gold-light);">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-field">
+          <label>Inquiry Type</label>
+          <input type="text" placeholder="Project Collaboration / Research">
+        </div>
+        <div class="form-field">
+          <label>Email address</label>
+          <input type="email" placeholder="colleague@institution.com">
+        </div>
+        <div class="form-field">
+          <label>Technical Details</label>
+          <textarea rows="5" placeholder="Briefly describe the system or problem..."></textarea>
+        </div>
+        <button class="form-submit">Send Inquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Mechanical Systems Engineering</div>
+  <div class="footer-copy">© 2026 — Research & Design Portfolio</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
