@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Mechanical Systems Engineer</title>
+<title>Portfolio — Mechanical Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -190,6 +190,9 @@
     margin-bottom: 0.4rem;
   }
   .stat-number span { color: var(--gold); font-size: 2rem; }
+  .stat-number.stat-small {
+    font-size: 2rem;
+  }
   .stat-label {
     font-family: var(--mono);
     font-size: 0.65rem;
@@ -552,9 +555,9 @@
   <div class="hero-bg-line"></div>
   <div class="hero-content">
     <div class="hero-text">
-      <div class="hero-eyebrow"> Mechanics & Robotics</div>
-      <h1>Mechanical<br>engineering <em>analytical</em><br>modeling</h1>
-      <p class="hero-sub">Specializing in robotic end-effector design. I am a curiosity with robotics and control mechanical systems.</p>
+      <div class="hero-eyebrow">Robotics &amp; Mechanical Design</div>
+      <h1>Designing<br><em>intelligent</em><br>robotic systems</h1>
+      <p class="hero-sub">A mechanical engineering student specializing in robotic end-effector design and control systems. I design grippers that are versatile, precise, and built to adapt.</p>
       <div class="btn-group">
         <a href="#projects" class="btn-primary">Portfolio Archive ↓</a>
         <a href="#contact" class="btn-outline">Start Discussion</a>
@@ -562,20 +565,20 @@
     </div>
     <div class="hero-stats">
       <div class="stat-box">
-        <span class="stat-number">1<span>+</span></span>
-        <span class="stat-label">Project Activities</span>
+        <span class="stat-number">4<span>+</span></span>
+        <span class="stat-label">Engineering Projects</span>
       </div>
       <div class="stat-box">
         <span class="stat-number">3<span>+</span></span>
-        <span class="stat-label">Software Toolkits</span>
+        <span class="stat-label">CAD &amp; Sim Tools</span>
       </div>
       <div class="stat-box">
         <span class="stat-number">7<span>-DOF</span></span>
-        <span class="stat-label">Kinematic Focus</span>
+        <span class="stat-label">Arm Research Focus</span>
       </div>
       <div class="stat-box">
-        <span class="stat-number">MPC</span>
-        <span class="stat-label">Analytical Methods</span>
+        <span class="stat-number stat-small">DC Lab</span>
+        <span class="stat-label">Research Member</span>
       </div>
     </div>
   </div>
@@ -590,25 +593,25 @@
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I am a researcher and engineer focused on the intersection of mechanical design and thermal management systems.</p>
-        <p>My work involves the rigorous analysis of turbomachinery components—specifically fans, pumps, and blowers—using fundamental fluid dynamics and thermodynamic cycles. I am particularly interested in the optimization of Diesel cycles and the efficiency of Air Handling Units (AHU) through LMTD and NTU methodologies.</p>
-        <p>Beyond thermal systems, I explore robotic precision, developing inverse kinematic models for 7-DOF arms and designing versatile end-effectors for multi-functional applications such as harvesting and precision pickup.</p>
+        <p>I am a mechanical engineering student and a member of the Dynamics and Control Laboratory (DC Lab), where I collaborate with a research team developing a 7-DOF robotic arm.</p>
+        <p>Within the project, I lead the design of the robotic gripper — the end-effector responsible for physical interaction with the environment. My goal is to build a multi-functional tool that is not constrained to a single task, but adaptable across agricultural, industrial, and precision use cases.</p>
+        <p>Beyond mechanical design, I explore control systems and machine learning techniques for robotic manipulation, bridging the gap between physical hardware and intelligent behavior.</p>
         <div class="btn-group" style="margin-top: 2rem;">
-          <a href="#" class="btn-outline">Download Proposal Structure</a>
+          <button class="btn-outline" id="cv-btn" onclick="openCVModal()">Download CV ↓</button>
         </div>
       </div>
       <div class="about-aside reveal">
         <div class="aside-block">
-          <div class="aside-label">Engineering Focus</div>
-          <p>Mechanical & Thermal Systems<br>Turbomachinery Analysis<br><em style="color: var(--gold); font-style: italic;">Thesis-Driven Research</em></p>
+          <div class="aside-label">Research Role</div>
+          <p>Gripper Design Lead, DC Lab<br>7-DOF Robotic Arm Project<br><em style="color: var(--gold); font-style: italic;">Dynamics &amp; Control Laboratory</em></p>
         </div>
         <div class="aside-block">
-          <div class="aside-label">Project Planning</div>
-          <p>Utilizing PERT/CPM for timeline management<br>Project Cycle: Feb–June 2025<br>20+ Integrated Milestones</p>
+          <div class="aside-label">Project Timeline</div>
+          <p>Active: February – June 2025<br>Planning method: PERT/CPM<br>20+ integrated milestones</p>
         </div>
         <div class="aside-block">
-          <div class="aside-label">Core Interests</div>
-          <p>Internal combustion engines, inverse kinematics, finite element analysis, and automated climate control systems.</p>
+          <div class="aside-label">Areas of Interest</div>
+          <p>Inverse kinematics, finite element analysis, robotic path planning, control systems, and machine learning for robotic manipulation.</p>
         </div>
       </div>
     </div>
@@ -625,7 +628,7 @@
     <div class="skills-grid">
       <div class="skill-card reveal">
         <span class="skill-icon">⚙</span>
-        <div class="skill-name">Simulation & FEA</div>
+        <div class="skill-name">Simulation &amp; FEA</div>
         <p class="skill-desc">Validating structural integrity and fluid behavior through industry-standard simulation environments.</p>
         <div class="skill-tags">
           <span class="tag">Abaqus</span><span class="tag">MATLAB</span>
@@ -635,7 +638,7 @@
       <div class="skill-card reveal">
         <span class="skill-icon">◈</span>
         <div class="skill-name">Thermal Engineering</div>
-        <p class="skill-desc">Analysis of heat exchangers and cooling batteries using LMTD and NTU methods for AHU optimization.</p>
+        <p class="skill-desc">Analysis of heat exchangers and cooling systems using LMTD and NTU methods for AHU optimization.</p>
         <div class="skill-tags">
           <span class="tag">LMTD</span><span class="tag">NTU</span>
           <span class="tag">Diesel Cycle</span><span class="tag">HVAC</span>
@@ -644,7 +647,7 @@
       <div class="skill-card reveal">
         <span class="skill-icon">◉</span>
         <div class="skill-name">Turbomachinery</div>
-        <p class="skill-desc">Performance calculation for axial fans, hydraulic pumps, and blowers using complex fluid formulas.</p>
+        <p class="skill-desc">Performance calculations for axial fans, hydraulic pumps, and blowers using fluid mechanics principles.</p>
         <div class="skill-tags">
           <span class="tag">Axial Fans</span><span class="tag">Pumps</span><span class="tag">Bore/Stroke</span>
         </div>
@@ -652,16 +655,16 @@
       <div class="skill-card reveal">
         <span class="skill-icon">⬡</span>
         <div class="skill-name">Robotics Design</div>
-        <p class="skill-desc">Designing end-effectors and calculating joint angles for 3-DOF robotic arms using inverse kinematics.</p>
+        <p class="skill-desc">Designing end-effectors and calculating joint angles for robotic arms using inverse kinematics.</p>
         <div class="skill-tags">
-          <span class="tag">3-DOF</span><span class="tag">End-Effectors</span>
+          <span class="tag">7-DOF</span><span class="tag">End-Effectors</span>
           <span class="tag">Kinematics</span><span class="tag">Grippers</span>
         </div>
       </div>
       <div class="skill-card reveal">
         <span class="skill-icon">▣</span>
         <div class="skill-name">Project Management</div>
-        <p class="skill-desc">Strict adherence to project timelines through PERT and CPM calculation for complex engineering tasks.</p>
+        <p class="skill-desc">Managing complex engineering timelines through PERT and CPM analysis to minimize schedule variance.</p>
         <div class="skill-tags">
           <span class="tag">PERT</span><span class="tag">CPM</span>
           <span class="tag">Task Variance</span><span class="tag">Planning</span>
@@ -694,7 +697,7 @@
           <div class="project-title">3-DOF Arm Inverse Kinematics</div>
           <div class="project-meta">Robotics · MATLAB · Kinematics</div>
         </div>
-        <div class="project-desc">Defined segment lengths (l1, l2, l3) and joint angles to optimize precision for a robotic arm designed for writing and drawing tasks.</div>
+        <div class="project-desc">Defined segment lengths (l1, l2, l3) and solved joint angle configurations to optimize positional precision for a robotic arm designed for writing and drawing tasks.</div>
         <div class="project-arrow">→</div>
       </div>
       <div class="project-card reveal">
@@ -712,16 +715,16 @@
           <div class="project-title">Diesel Cycle Engine Optimization</div>
           <div class="project-meta">Combustion · Thermodynamics · Bore/Stroke</div>
         </div>
-        <div class="project-desc">Detailed analysis of a four-cylinder Diesel engine, calculating thermodynamic parameters based on specific bore (82.1mm) and stroke (90.41mm) dimensions.</div>
+        <div class="project-desc">Detailed thermodynamic analysis of a four-cylinder diesel engine, calculating performance parameters based on bore (82.1 mm) and stroke (90.41 mm) specifications.</div>
         <div class="project-arrow">→</div>
       </div>
       <div class="project-card reveal">
         <div>
           <div class="project-num">P.04 / 2025</div>
-          <div class="project-title">Multi-functional End Effector</div>
+          <div class="project-title">Multi-functional End-Effector</div>
           <div class="project-meta">Mechanical Design · Harvesting · Spraying</div>
         </div>
-        <div class="project-desc">Designed a versatile gripper capable of executing diverse tasks including agricultural harvesting, industrial spraying, and item pickup.</div>
+        <div class="project-desc">Designed a versatile robotic gripper capable of executing diverse tasks including agricultural harvesting, industrial spraying, and precision item pickup — without sacrificing capability for any single use case.</div>
         <div class="project-arrow">→</div>
       </div>
     </div>
@@ -739,19 +742,19 @@
       <div class="blog-card reveal">
         <div class="blog-date">March 2026</div>
         <div class="blog-title">The Structural Difference: Thesis vs. Proposal</div>
-        <p class="blog-excerpt">Exploring why the bridge from a project proposal to a final thesis requires a fundamental shift in scope and analytical depth.</p>
+        <p class="blog-excerpt">Why the transition from a project proposal to a final thesis demands a fundamental shift in scope, evidence, and analytical depth.</p>
         <div class="blog-read">Read article →</div>
       </div>
       <div class="blog-card reveal">
         <div class="blog-date">February 2026</div>
         <div class="blog-title">Applying PERT to Mechanical Design Timelines</div>
-        <p class="blog-excerpt">Calculating expected time (te) and variance to manage the uncertainty of prototyping and simulation errors in complex assemblies.</p>
+        <p class="blog-excerpt">Calculating expected time (te) and variance to manage uncertainty during prototyping and simulation in complex assembly projects.</p>
         <div class="blog-read">Read article →</div>
       </div>
       <div class="blog-card reveal">
         <div class="blog-date">January 2026</div>
         <div class="blog-title">Troubleshooting Finite Element Errors</div>
-        <p class="blog-excerpt">Analyzing common causes for "Job Aborted" errors in Abaqus/Standard and strategies for mesh refinement and convergence.</p>
+        <p class="blog-excerpt">Common causes behind "Job Aborted" errors in Abaqus/Standard, and practical strategies for mesh refinement and solver convergence.</p>
         <div class="blog-read">Read article →</div>
       </div>
     </div>
@@ -767,22 +770,22 @@
     </div>
     <div class="contact-grid">
       <div class="reveal">
-        <p class="contact-intro">Let's solve a <em>complex</em> system problem together.</p>
-        <p class="contact-sub">Currently open to research collaborations, internship inquiries, and technical discussions regarding mechanical and thermal system design.</p>
+        <p class="contact-intro">Let's solve a <em>complex</em> engineering problem together.</p>
+        <p class="contact-sub">Currently open to research collaborations, internship inquiries, and technical discussions on mechanical design, robotics, and thermal systems.</p>
         <div class="contact-links">
-          <a href="mailto:engineer@example.com" class="contact-link">
+          <a href="mailto:napha4657@gmail.com" class="contact-link">
             <span class="contact-link-icon">✉</span>
             <div class="contact-link-text">
               <span class="contact-link-label">Academic Email</span>
-              <span class="contact-link-val">engineering.researcher@univ.edu</span>
+              <span class="contact-link-val">napha4657@gmail.com</span>
             </div>
             <span style="color: var(--gold-light);">→</span>
           </a>
-          <a href="#" class="contact-link">
+          <a href="https://github.com/nanapha-phonn" target="_blank" class="contact-link">
             <span class="contact-link-icon">in</span>
             <div class="contact-link-text">
-              <span class="contact-link-label">Professional Network</span>
-              <span class="contact-link-val">linkedin.com/in/mechanical-specialist</span>
+              <span class="contact-link-label">Network</span>
+              <span class="contact-link-val">https://github.com/nanapha-phonn</span>
             </div>
             <span style="color: var(--gold-light);">→</span>
           </a>
@@ -791,15 +794,15 @@
       <div class="contact-form reveal">
         <div class="form-field">
           <label>Inquiry Type</label>
-          <input type="text" placeholder="Project Collaboration / Research">
+          <input type="text" placeholder="Research Collaboration / Internship">
         </div>
         <div class="form-field">
-          <label>Email address</label>
+          <label>Email Address</label>
           <input type="email" placeholder="colleague@institution.com">
         </div>
         <div class="form-field">
           <label>Technical Details</label>
-          <textarea rows="5" placeholder="Briefly describe the system or problem..."></textarea>
+          <textarea rows="5" placeholder="Briefly describe the system or problem you'd like to discuss..."></textarea>
         </div>
         <button class="form-submit">Send Inquiry →</button>
       </div>
@@ -807,13 +810,66 @@
   </div>
 </section>
 
+<!-- CV MODAL -->
+<div id="cv-modal" style="display:none; position:fixed; inset:0; z-index:200; background:rgba(15,15,13,0.7); backdrop-filter:blur(6px); align-items:center; justify-content:center;">
+  <div id="cv-modal-box" style="background:var(--cream); border:1px solid var(--rule); max-width:520px; width:90%; padding:3rem; position:relative; transform:translateY(20px); opacity:0; transition:transform 0.35s ease, opacity 0.35s ease;">
+    <button onclick="closeCVModal()" style="position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; cursor:pointer; font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; color:var(--ink-soft); text-transform:uppercase;">✕ Close</button>
+
+    <div style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:1.2rem; display:flex; align-items:center; gap:0.8rem;">
+      <span style="display:block; width:1.8rem; height:1px; background:var(--gold);"></span>
+      Curriculum Vitae
+    </div>
+
+    <h3 style="font-family:var(--serif); font-weight:300; font-size:2rem; color:var(--ink); margin-bottom:0.5rem; line-height:1.2;">Your <em style="font-style:italic; color:var(--gold);">Name</em></h3>
+    <p style="font-family:var(--mono); font-size:0.72rem; letter-spacing:0.12em; color:var(--ink-soft); text-transform:uppercase; margin-bottom:2rem;">Mechanical Engineering · DC Lab</p>
+
+    <div style="border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:1.5rem 0; margin-bottom:2rem; display:flex; flex-direction:column; gap:0.9rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft);">Format</span>
+        <span style="font-family:var(--serif); font-size:1rem; color:var(--ink);">PDF Document</span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft);">Last Updated</span>
+        <span style="font-family:var(--serif); font-size:1rem; color:var(--ink);" id="cv-date"></span>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft);">Contents</span>
+        <span style="font-family:var(--serif); font-size:1rem; color:var(--ink);">Education, Projects, Skills</span>
+      </div>
+    </div>
+
+    <div id="cv-progress-wrap" style="display:none; margin-bottom:1.5rem;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+        <span style="font-family:var(--mono); font-size:0.65rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft);" id="cv-progress-label">Preparing document...</span>
+        <span style="font-family:var(--mono); font-size:0.65rem; color:var(--gold);" id="cv-progress-pct">0%</span>
+      </div>
+      <div style="height:1px; background:var(--rule); position:relative; overflow:hidden;">
+        <div id="cv-progress-bar" style="position:absolute; left:0; top:0; height:100%; width:0%; background:var(--gold); transition:width 0.1s linear;"></div>
+      </div>
+    </div>
+
+    <div style="display:flex; gap:0.8rem;">
+      <button id="cv-download-btn" onclick="startCVDownload()" style="flex:1; padding:1rem; background:var(--ink); color:var(--cream); border:none; font-family:var(--mono); font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; cursor:pointer; transition:background 0.25s;">Download CV →</button>
+      <button onclick="closeCVModal()" style="padding:1rem 1.4rem; background:none; border:1px solid var(--rule); color:var(--ink-soft); font-family:var(--mono); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:all 0.25s;">Cancel</button>
+    </div>
+
+    <p style="font-family:var(--mono); font-size:0.62rem; color:var(--ink-soft); margin-top:1.2rem; line-height:1.6; opacity:0.7;">Replace the <code style="color:var(--gold);">CV_FILE_URL</code> constant in the script with your actual PDF link (Google Drive, Dropbox, or direct URL).</p>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Mechanical Systems Engineering</div>
-  <div class="footer-copy">© 2026 — Research & Design Portfolio</div>
+  <div class="footer-copy">© 2026 — Research &amp; Design Portfolio</div>
 </footer>
 
 <script>
+  /* ── CONFIG ── */
+  // Replace with your Formspree form ID (sign up free at formspree.io)
+  // Example: if your endpoint is https://formspree.io/f/xpzgkrqw, your ID is xpzgkrqw
+  const FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
+
+  /* ── Scroll reveal ── */
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -824,6 +880,176 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
+
+  /* ── Contact form (Formspree) ── */
+  async function submitForm(e) {
+    e.preventDefault();
+    const btn      = document.getElementById('form-submit-btn');
+    const errorDiv = document.getElementById('form-error');
+    const errorMsg = document.getElementById('form-error-msg');
+
+    // Loading state
+    btn.textContent  = 'Sending...';
+    btn.disabled     = true;
+    btn.style.background  = 'var(--gold)';
+    btn.style.letterSpacing = '0.25em';
+    errorDiv.style.display = 'none';
+
+    const form = document.getElementById('contact-form');
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        // Show success
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        const json = await res.json();
+        const msg  = (json.errors && json.errors.map(e => e.message).join(', '))
+                     || 'Submission failed. Please email me directly.';
+        showFormError(msg);
+        resetBtn();
+      }
+    } catch (err) {
+      showFormError('Network error. Please check your connection and try again.');
+      resetBtn();
+    }
+  }
+
+  function showFormError(msg) {
+    const errorDiv = document.getElementById('form-error');
+    document.getElementById('form-error-msg').textContent = msg;
+    errorDiv.style.display = 'block';
+  }
+
+  function resetBtn() {
+    const btn = document.getElementById('form-submit-btn');
+    btn.textContent = 'Send Inquiry →';
+    btn.disabled    = false;
+    btn.style.background   = 'var(--ink)';
+    btn.style.letterSpacing = '0.2em';
+  }
+
+  function resetForm() {
+    document.getElementById('contact-form').reset();
+    document.getElementById('contact-form').style.display = 'block';
+    document.getElementById('form-success').style.display = 'none';
+    document.getElementById('form-error').style.display  = 'none';
+    resetBtn();
+  }
+
+  /* ── CV Download config ── */
+  // Replace this URL with your actual CV PDF link (Google Drive, Dropbox, or direct URL)
+  const CV_FILE_URL = 'https://drive.google.com/file/d/18xzYWj2gLxjlZ8sRwBX_mpcp_9XUQPxQ/view?usp=drive_link';
+  const CV_FILENAME = 'cv_for_master_program.pdf';
+
+  /* ── Set last updated date dynamically ── */
+  document.getElementById('cv-date').textContent = new Date().toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+
+  /* ── Modal open / close ── */
+  function openCVModal() {
+    const modal = document.getElementById('cv-modal');
+    const box   = document.getElementById('cv-modal-box');
+    modal.style.display = 'flex';
+    // Reset state
+    resetCVButton();
+    document.getElementById('cv-progress-wrap').style.display = 'none';
+    // Animate in
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        box.style.transform = 'translateY(0)';
+        box.style.opacity   = '1';
+      });
+    });
+    document.addEventListener('keydown', escListener);
+  }
+
+  function closeCVModal() {
+    const modal = document.getElementById('cv-modal');
+    const box   = document.getElementById('cv-modal-box');
+    box.style.transform = 'translateY(20px)';
+    box.style.opacity   = '0';
+    setTimeout(() => { modal.style.display = 'none'; }, 340);
+    document.removeEventListener('keydown', escListener);
+  }
+
+  function escListener(e) { if (e.key === 'Escape') closeCVModal(); }
+
+  // Close on backdrop click
+  document.getElementById('cv-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeCVModal();
+  });
+
+  /* ── Download with progress animation ── */
+  function startCVDownload() {
+    const btn      = document.getElementById('cv-download-btn');
+    const wrap     = document.getElementById('cv-progress-wrap');
+    const bar      = document.getElementById('cv-progress-bar');
+    const label    = document.getElementById('cv-progress-label');
+    const pct      = document.getElementById('cv-progress-pct');
+
+    // Disable button
+    btn.disabled = true;
+    btn.textContent = 'Preparing...';
+    btn.style.background = 'var(--gold)';
+    wrap.style.display = 'block';
+
+    const steps = [
+      { p: 15,  t: 200,  msg: 'Compiling document...' },
+      { p: 35,  t: 500,  msg: 'Formatting pages...'   },
+      { p: 60,  t: 900,  msg: 'Optimizing PDF...'     },
+      { p: 85,  t: 1300, msg: 'Almost ready...'       },
+      { p: 100, t: 1700, msg: 'Complete!'              },
+    ];
+
+    steps.forEach(({ p, t, msg }) => {
+      setTimeout(() => {
+        bar.style.width   = p + '%';
+        pct.textContent   = p + '%';
+        label.textContent = msg;
+
+        if (p === 100) {
+          setTimeout(() => {
+            triggerDownload();
+            btn.textContent = 'Downloaded ✓';
+            btn.style.background = '#4a7c59';
+            btn.disabled = false;
+            setTimeout(closeCVModal, 1800);
+          }, 300);
+        }
+      }, t);
+    });
+  }
+
+  function triggerDownload() {
+    doAnchorDownload(CV_FILE_URL, CV_FILENAME);
+  }
+
+  function doAnchorDownload(url, filename) {
+    const a = document.createElement('a');
+    a.href     = url;
+    a.download = filename;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  function resetCVButton() {
+    const btn = document.getElementById('cv-download-btn');
+    btn.textContent = 'Download CV →';
+    btn.style.background = 'var(--ink)';
+    btn.disabled = false;
+    document.getElementById('cv-progress-bar').style.width = '0%';
+    document.getElementById('cv-progress-pct').textContent = '0%';
+    document.getElementById('cv-progress-label').textContent = 'Preparing document...';
+  }
 </script>
 </body>
 </html>
